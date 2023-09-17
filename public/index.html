@@ -116,7 +116,7 @@
     <div class="bottom">
     <footer>        <!-- This is a Semantic HTML Change -->
         <div class="center">
-            All rights reserved &copy; Fabio Nolasco
+            All rights reserved &copy; Yasaswi kattamanchi
         </div>
     </footer>
     </div>
@@ -159,7 +159,7 @@
             axios.get('/budget')
             .then((res) => {
                 console.log(res.data);
-                for(var i = 0; i < res.data.length; i++ ){
+                for(var i = 0; i < res.data.myBudget.length; i++ ){
                     data.data[i] = res.data.myBudget[i].budget;
                     data.labels[i] = res.data.myBudget[i].title;
                 }
