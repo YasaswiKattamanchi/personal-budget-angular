@@ -1,5 +1,4 @@
-{
-    "myBudget": [
+[
       {
         "title": "Rent",
         "budget": 275
@@ -28,5 +27,4 @@
         "title": "Pet Expenses",
         "budget": 70
       }
-    ]
-  }
+]
