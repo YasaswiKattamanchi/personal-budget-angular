@@ -1,6 +1,9 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+
+
 import { Chart, ChartOptions } from 'chart.js/auto';
+import { DataService } from '../data.service';
 
 // Define an interface to represent the shape of your API response
 interface BudgetItem {
@@ -31,11 +34,10 @@ export class HomepageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private myPieChart: Chart | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/budget')
-      .subscribe((res : any) => {
+    this.dataService.getData().subscribe((res) => {
         console.log(res);
         for (const item of res) {
           this.data_p.data.push(item.budget);
